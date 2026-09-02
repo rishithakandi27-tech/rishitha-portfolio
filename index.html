@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rishitha Kandi | Controls Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background: #e2e8f0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #0f172a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background: #334155;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        section h2 {
+            font-size: 34px;
+            margin-bottom: 30px;
+            color: #0f172a;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 850px;
+            font-size: 17px;
+        }
+
+        .skills {
+            background: #f1f5f9;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .experience {
+            background: white;
+        }
+
+        .job {
+            margin-bottom: 35px;
+            padding-left: 20px;
+            border-left: 4px solid #0f172a;
+        }
+
+        .job h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .job .date {
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .job ul {
+            padding-left: 20px;
+        }
+
+        .projects {
+            background: #f1f5f9;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+        }
+
+        .education {
+            background: white;
+        }
+
+        .education-card {
+            max-width: 800px;
+            padding: 25px;
+            border-left: 4px solid #0f172a;
+        }
+
+        .contact {
+            background: #0f172a;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact a {
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Rishitha Kandi</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>Rishitha Kandi</h1>
+
+        <h2>Controls Engineer | Industrial Automation | PLC | SCADA | HMI</h2>
+
+        <p>
+            Controls Engineer with 4+ years of experience in industrial automation,
+            PLC programming, SCADA/HMI development, commissioning, troubleshooting,
+            and production-floor automation support.
+        </p>
+
+        <a href="#projects" class="button">View My Projects</a>
+
+        <a href="#contact" class="button">Contact Me</a>
+
+    </div>
+</section>
+
+
+<section id="about" class="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am a Controls Engineer with hands-on experience in industrial automation,
+        PLC programming, SCADA/HMI development, commissioning, and high-volume
+        manufacturing environments.
+        <br><br>
+        My experience includes Allen-Bradley ControlLogix and CompactLogix,
+        Siemens and Omron PLCs, Ignition SCADA, FactoryTalk View, Cognex machine
+        vision, industrial networks, drives, motion systems, conveyors, and
+        automated equipment.
+        <br><br>
+        I enjoy troubleshooting complex automation problems, performing
+        root-cause analysis, modifying controls logic, and improving equipment
+        reliability and production performance.
+    </p>
+
+</section>
+
+
+<section id="skills" class="skills">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skill-grid">
+
+        <div class="skill-card">
+            <h3>PLC & Automation</h3>
+            <p>
+                Allen-Bradley ControlLogix, CompactLogix, Siemens S7,
+                Omron PLCs, FANUC PMC, Ladder Logic, Sequencing,
+                Interlocks, Permissives, Timers & Counters
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Rockwell Automation</h3>
+            <p>
+                Studio 5000 Logix Designer, FactoryTalk View ME/SE,
+                EtherNet/IP, Distributed I/O, PLC/HMI Troubleshooting
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Siemens</h3>
+            <p>
+                TIA Portal, SIMATIC Manager / STEP 7, STARTER,
+                HMI Pro CS, PROFINET, PLC & Drive Diagnostics
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Omron</h3>
+            <p>
+                Sysmac Studio, CX-Programmer, Network Configurator,
+                OS32C Configuration Tool, DeviceNet
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Ignition SCADA</h3>
+            <p>
+                Ignition Gateway, Ignition Designer, Vision Client Launcher,
+                Tags, Alarms, Trends, Historical Data, PLC-SCADA Integration
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Vision & Industrial Tools</h3>
+            <p>
+                Cognex In-Sight Explorer, Cognex DataMan,
+                Atlas Copco ToolsTalk, DWG TrueView,
+                Vision Inspection & Error-Proofing
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="experience" class="experience">
+
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+
+        <h3>Controls Engineer — General Motors</h3>
+
+        <div class="date">Moraine, OH | Feb 2026 – Present</div>
+
+        <ul>
+            <li>
+                Troubleshoot Omron and Siemens PLC-controlled automated
+                manufacturing equipment by tracing ladder logic, machine
+                sequences, permissives, interlocks, timers, counters and live I/O.
+            </li>
+
+            <li>
+                Diagnose conveyor, motor, actuator and drive faults using PLC
+                commands, sensor feedback, position signals, safety permissives,
+                drive status and HMI alarms.
+            </li>
+
+            <li>
+                Support Cognex machine vision and identification systems,
+                including camera triggers, inspection results, PLC handshakes,
+                DataMan readers and error-proofing logic.
+            </li>
+
+            <li>
+                Perform production-floor troubleshooting of sensors, photoeyes,
+                proximity switches, actuators, motors, drives and analog/digital I/O.
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="job">
+
+        <h3>Controls Engineer — Rockwell Automation</h3>
+
+        <div class="date">USA | Jan 2025 – Feb 2026</div>
+
+        <ul>
+            <li>
+                Developed, modified and troubleshot Allen-Bradley ControlLogix
+                and CompactLogix PLC programs using Studio 5000.
+            </li>
+
+            <li>
+                Configured and troubleshot EtherNet/IP networks and distributed I/O.
+            </li>
+
+            <li>
+                Developed and modified FactoryTalk View ME/SE HMI applications
+                including alarms, diagnostics and operator controls.
+            </li>
+
+            <li>
+                Performed PLC/HMI commissioning, FAT, SAT, I/O checkout,
+                equipment start-up and controls validation.
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="job">
+
+        <h3>Controls & Automation Labs Teaching Assistant — University of Dayton</h3>
+
+        <div class="date">Dayton, OH | Sep 2023 – Dec 2024</div>
+
+        <ul>
+            <li>
+                Supported PLC/HMI automation labs covering ladder logic,
+                sequencing, alarms, sensors, motor controls and interlocks.
+            </li>
+
+            <li>
+                Maintained electrical schematics and controls documentation.
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="job">
+
+        <h3>Controls Engineer — Wipro</h3>
+
+        <div class="date">Hyderabad, India | Jan 2022 – May 2023</div>
+
+        <ul>
+            <li>
+                Developed and maintained Ignition SCADA/HMI applications
+                for industrial automation and production monitoring.
+            </li>
+
+            <li>
+                Built HMI screens using Ignition Designer and configured PLC tags
+                for real-time equipment status and process values.
+            </li>
+
+            <li>
+                Configured alarms, alarm history, trends and historical data logging.
+            </li>
+
+            <li>
+                Integrated Ignition with industrial PLCs and field devices,
+                troubleshooting communication and tag-quality issues.
+            </li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<section id="projects" class="projects">
+
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <h3>CNC Oil-Hole Drilling Tool Inspection & Quality Improvement</h3>
+
+            <p>
+                Investigated an oil-hole drilling quality issue on CNC machining
+                operations after improperly machined engine components escaped
+                production inspection.
+            </p>
+
+            <p>
+                Reproduced the failure, traced the issue to CNC program logic,
+                identified a bypassed Tool Inspection M-code, corrected the logic,
+                and validated both normal and missing-tool conditions.
+            </p>
+
+            <strong>Focus:</strong>
+            <p>
+                Root Cause Analysis • CNC • Tool Inspection • Quality Improvement
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>Ignition SCADA — Production Monitoring & Alarm Management</h3>
+
+            <p>
+                Developed an Ignition SCADA application for centralized visualization
+                and monitoring of automated manufacturing equipment.
+            </p>
+
+            <p>
+                Built operator HMI screens, configured PLC tags, alarms,
+                alarm history, trends and historical data, and established
+                PLC-to-Ignition communication.
+            </p>
+
+            <strong>Focus:</strong>
+            <p>
+                Ignition SCADA • HMI • PLC Integration • Alarms • Trends
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="education" class="education">
+
+    <h2>Education</h2>
+
+    <div class="education-card">
+
+        <h3>Master of Science in Computer Engineering</h3>
+
+        <p>
+            University of Dayton — Dayton, OH
+        </p>
+
+        <br>
+
+        <p>
+            Relevant Coursework:
+            Control Systems • Embedded Systems • Contemporary Digital Systems •
+            Digital IC Design • Analog Integrated Circuit Design •
+            Computer Design • Electronics Systems Lab •
+            Digital Signal Processing
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <h2>Let's Connect</h2>
+
+    <p>
+        I am open to connecting with professionals and exploring opportunities
+        in Controls Engineering, Industrial Automation, PLC, SCADA and HMI.
+    </p>
+
+    <br>
+
+    <p>
+        Email:
+        <a href="mailto:rishitha.kandi27@gmail.com">
+            rishitha.kandi27@gmail.com
+        </a>
+    </p>
+
+    <p>
+        Location: Dayton, Ohio
+    </p>
+
+    <p>
+        LinkedIn: Add your LinkedIn profile link here
+    </p>
+
+</section>
+
+
+<footer>
+    <p>© 2026 Rishitha Kandi | Controls Engineer</p>
+</footer>
+
+</body>
+</html>
