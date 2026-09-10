@@ -486,6 +486,48 @@
       font-size:.9rem;
     }
 
+
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .cert-card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      transition:.2s ease;
+    }
+
+    .cert-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(77,163,255,.34);
+    }
+
+    .cert-card h3{
+      font-size:1rem;
+      line-height:1.35;
+      margin-bottom:8px;
+    }
+
+    .cert-card p{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:12px;
+    }
+
+    .cert-card a{
+      display:inline-block;
+      color:var(--accent-2);
+      text-decoration:none;
+      font-weight:750;
+      font-size:.88rem;
+    }
+
+    .cert-card a:hover{text-decoration:underline}
+
     .education-card{
       background:var(--panel);
       border:1px solid var(--line);
@@ -590,6 +632,7 @@
 
       section{padding:72px 0}
       .skill-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr 1fr}
       .role-top{flex-direction:column}
       .date{white-space:normal}
@@ -615,6 +658,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -872,6 +916,68 @@
             <div class="step"><strong>Integration</strong><span>Established and troubleshot PLC-to-Ignition communication and resolved tag-quality issues.</span></div>
             <div class="step"><strong>Deployment</strong><span>Tested deployment through Ignition Gateway and Vision Client Launcher for system validation and operator access.</span></div>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="certifications" class="section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Certifications</div>
+          <h2>Training & professional development.</h2>
+        </div>
+        <p>Selected PLC, HMI, automation, and industrial safety certifications.</p>
+      </div>
+
+      <div class="cert-grid">
+        <article class="cert-card">
+          <h3>Studio 5000 Advanced Ladder Logic Training</h3>
+          <p>Udemy</p>
+          <a href="https://www.udemy.com/certificate/UC-4e86bbc5-8142-4914-9fb4-7f458326ead9/" target="_blank" rel="noopener">View Certificate →</a>
+        </article>
+
+        <article class="cert-card">
+          <h3>RSLogix / Studio 5000 Ladder Logic Training</h3>
+          <p>Udemy</p>
+          <a href="https://www.udemy.com/certificate/UC-258c3651-690a-4a4a-9dcb-008fbfe60c15/" target="_blank" rel="noopener">View Certificate →</a>
+        </article>
+
+        <article class="cert-card">
+          <h3>Master Allen-Bradley PLC RSLogix / Studio 5000 Essential Guide</h3>
+          <p>Udemy</p>
+          <a href="https://www.udemy.com/certificate/UC-17b215cf-9209-4f47-af02-6d1761771333/" target="_blank" rel="noopener">View Certificate →</a>
+        </article>
+
+        <article class="cert-card">
+          <h3>30-Hour OSHA General Industry Safety and Health</h3>
+          <p>Industrial Safety Training</p>
+        </article>
+
+        <article class="cert-card">
+          <h3>Siemens PLC and TIA Portal Essentials</h3>
+          <p>Coursera</p>
+          <a href="https://www.coursera.org/account/accomplishments/certificate/1SIXND5682O9" target="_blank" rel="noopener">View Certificate →</a>
+        </article>
+
+        <article class="cert-card">
+          <h3>HMI Design and Intermediate PLC Programming</h3>
+          <p>Coursera</p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/IZKGHFTERBWA" target="_blank" rel="noopener">View Certificate →</a>
+        </article>
+
+        <article class="cert-card">
+          <h3>Advanced Programming, Control, and Monitoring Systems</h3>
+          <p>Coursera</p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/G2QVLAA248X6" target="_blank" rel="noopener">View Certificate →</a>
+        </article>
+
+        <article class="cert-card">
+          <h3>Learn PLC and HMI from Scratch</h3>
+          <p>Coursera Specialization</p>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/NSTGWX1DLMKZ" target="_blank" rel="noopener">View Certificate →</a>
         </article>
       </div>
     </div>
