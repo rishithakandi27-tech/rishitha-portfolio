@@ -1,610 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rishitha Kandi — Controls & Automation Engineer specializing in PLC, SCADA, HMI, industrial automation, robotics, vision systems, drives, and production-floor troubleshooting." />
+  <title>Rishitha Kandi | Controls & Automation Engineer</title>
 
-    <title>Rishitha Kandi | Controls Engineer</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0b1728;
+      --panel:#101d31;
+      --panel-2:#13233a;
+      --text:#ecf3ff;
+      --muted:#a7b4c8;
+      --line:rgba(255,255,255,.09);
+      --accent:#4da3ff;
+      --accent-2:#79c0ff;
+      --light:#f5f9ff;
+      --dark:#0a1322;
+      --shadow:0 16px 45px rgba(0,0,0,.22);
+      --radius:20px;
+      --max:1180px;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    *{box-sizing:border-box;margin:0;padding:0}
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html{scroll-behavior:smooth}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
-            background: #f8fafc;
-        }
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
 
-        header {
-            background: #0f172a;
-            color: white;
-            padding: 18px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    a{color:inherit}
+    img{max-width:100%;display:block}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin-inline:auto;
+    }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(7,17,31,.84);
+      border-bottom:1px solid var(--line);
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+    nav{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-        }
+    .logo{
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:1.05rem;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 70px 8%;
-            background: #e2e8f0;
-        }
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:.94rem;
+      transition:.2s ease;
+    }
 
-        .hero-content {
-            max-width: 800px;
-        }
+    nav a:hover{color:#fff}
 
-        .hero h1 {
-            font-size: 56px;
-            color: #0f172a;
-            margin-bottom: 15px;
-        }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid var(--line);
+    }
 
-        .hero h2 {
-            font-size: 28px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(77,163,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77,163,255,.05) 1px, transparent 1px);
+      background-size:38px 38px;
+      mask-image:linear-gradient(to bottom, black, transparent 90%);
+      pointer-events:none;
+    }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      right:-150px;
+      top:-160px;
+      background:radial-gradient(circle, rgba(77,163,255,.22), transparent 65%);
+      filter:blur(10px);
+      pointer-events:none;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 12px 22px;
-            background: #0f172a;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-right: 10px;
-        }
+    .hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:70px;
+      align-items:center;
+      padding:84px 0;
+    }
 
-        .button:hover {
-            background: #334155;
-        }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--accent-2);
+      font-weight:700;
+      font-size:.9rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
 
-        section {
-            padding: 70px 8%;
-        }
+    .eyebrow::before{
+      content:"";
+      width:28px;
+      height:2px;
+      background:var(--accent);
+    }
 
-        section h2 {
-            font-size: 34px;
-            margin-bottom: 30px;
-            color: #0f172a;
-        }
+    h1{
+      font-size:clamp(3.1rem, 7vw, 6.1rem);
+      line-height:.98;
+      letter-spacing:-.055em;
+      margin-bottom:20px;
+    }
 
-        .about {
-            background: white;
-        }
+    .hero h2{
+      font-size:clamp(1.15rem, 2.4vw, 1.65rem);
+      font-weight:650;
+      color:#dbe9ff;
+      margin-bottom:20px;
+    }
 
-        .about p {
-            max-width: 850px;
-            font-size: 17px;
-        }
+    .hero p{
+      max-width:760px;
+      color:var(--muted);
+      font-size:1.06rem;
+      margin-bottom:26px;
+    }
 
-        .skills {
-            background: #f1f5f9;
-        }
+    .tech-line{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:32px;
+    }
 
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    .pill{
+      border:1px solid rgba(77,163,255,.25);
+      background:rgba(77,163,255,.08);
+      color:#d9edff;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.9rem;
+    }
 
-        .skill-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
 
-        .skill-card h3 {
-            margin-bottom: 10px;
-            color: #0f172a;
-        }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:11px;
+      text-decoration:none;
+      font-weight:750;
+      font-size:.93rem;
+      transition:.2s ease;
+      border:1px solid transparent;
+    }
 
-        .experience {
-            background: white;
-        }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), #2476d5);
+      color:white;
+      box-shadow:0 10px 25px rgba(77,163,255,.2);
+    }
 
-        .job {
-            margin-bottom: 35px;
-            padding-left: 20px;
-            border-left: 4px solid #0f172a;
-        }
+    .btn-primary:hover{transform:translateY(-2px)}
 
-        .job h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
+    .btn-secondary{
+      border-color:var(--line);
+      background:rgba(255,255,255,.035);
+      color:#e6eefb;
+    }
 
-        .job .date {
-            color: #64748b;
-            margin-bottom: 12px;
-        }
+    .btn-secondary:hover{
+      border-color:rgba(77,163,255,.35);
+      background:rgba(77,163,255,.07);
+    }
 
-        .job ul {
-            padding-left: 20px;
-        }
+    .portrait-wrap{
+      display:flex;
+      justify-content:center;
+    }
 
-        .projects {
-            background: #f1f5f9;
-        }
+    .portrait-card{
+      width:min(360px, 100%);
+      padding:14px;
+      border-radius:28px;
+      background:linear-gradient(145deg, rgba(255,255,255,.11), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      position:relative;
+    }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+    .portrait-card::after{
+      content:"";
+      position:absolute;
+      inset:18px -18px -18px 18px;
+      border:1px solid rgba(77,163,255,.22);
+      border-radius:28px;
+      z-index:-1;
+    }
 
-        .project-card {
-            background: white;
-            padding: 28px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+    .portrait{
+      aspect-ratio:4/5;
+      border-radius:20px;
+      overflow:hidden;
+      background:
+        linear-gradient(145deg, #183354, #0d2037);
+      display:grid;
+      place-items:center;
+      color:#b7d8ff;
+      font-size:4rem;
+      font-weight:800;
+    }
 
-        .project-card h3 {
-            margin-bottom: 15px;
-            color: #0f172a;
-        }
+    .portrait img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-        .project-card p {
-            margin-bottom: 15px;
-        }
+    section{padding:92px 0}
 
-        .education {
-            background: white;
-        }
+    .section-dark{background:var(--bg)}
+    .section-soft{background:var(--bg-soft)}
 
-        .education-card {
-            max-width: 800px;
-            padding: 25px;
-            border-left: 4px solid #0f172a;
-        }
+    .section-heading{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:38px;
+    }
 
-        .contact {
-            background: #0f172a;
-            color: white;
-        }
+    .section-heading .kicker{
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      font-size:.82rem;
+      font-weight:800;
+      margin-bottom:7px;
+    }
 
-        .contact h2 {
-            color: white;
-        }
+    .section-heading h2{
+      font-size:clamp(2rem, 4vw, 3.1rem);
+      line-height:1.1;
+      letter-spacing:-.035em;
+    }
 
-        .contact a {
-            color: white;
-        }
+    .section-heading p{
+      max-width:620px;
+      color:var(--muted);
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-            color: white;
-        }
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:36px;
+      align-items:start;
+    }
 
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
+    .about-copy{
+      font-size:1.05rem;
+      color:#c6d2e4;
+    }
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
+    .about-copy p + p{margin-top:16px}
 
-            .hero h1 {
-                font-size: 40px;
-            }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
+    }
 
-            .hero h2 {
-                font-size: 22px;
-            }
-        }
-    </style>
+    .stat{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.5rem;
+      margin-bottom:4px;
+      color:#fff;
+    }
+
+    .stat span{color:var(--muted);font-size:.92rem}
+
+    .skill-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, var(--panel), #0e1929);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:0 10px 26px rgba(0,0,0,.13);
+    }
+
+    .card h3{
+      font-size:1.08rem;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .card .tag{
+      display:inline-block;
+      color:var(--accent-2);
+      font-size:.77rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+    }
+
+    .timeline{
+      position:relative;
+      display:grid;
+      gap:24px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:11px;
+      top:14px;
+      bottom:14px;
+      width:2px;
+      background:linear-gradient(var(--accent), rgba(77,163,255,.08));
+    }
+
+    .role{
+      position:relative;
+      padding-left:50px;
+    }
+
+    .role::before{
+      content:"";
+      position:absolute;
+      left:4px;
+      top:10px;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:var(--bg-soft);
+      border:4px solid var(--accent);
+      box-shadow:0 0 0 5px rgba(77,163,255,.08);
+    }
+
+    .role-box{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px;
+    }
+
+    .role-top{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:flex-start;
+      margin-bottom:12px;
+    }
+
+    .role h3{font-size:1.22rem}
+    .company{color:var(--accent-2);font-weight:750;margin-top:2px}
+    .date{color:var(--muted);font-size:.9rem;white-space:nowrap}
+
+    .role ul{
+      padding-left:18px;
+      color:#c5d0e0;
+    }
+
+    .role li + li{margin-top:8px}
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:22px;
+    }
+
+    .project-card{
+      background:linear-gradient(150deg, #11243c, #0c1828 70%);
+      border:1px solid rgba(77,163,255,.18);
+      border-radius:22px;
+      padding:30px;
+      min-height:100%;
+      box-shadow:var(--shadow);
+    }
+
+    .project-number{
+      font-size:.78rem;
+      color:var(--accent-2);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      margin-bottom:14px;
+    }
+
+    .project-card h3{
+      font-size:1.35rem;
+      line-height:1.25;
+      margin-bottom:17px;
+    }
+
+    .project-card p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .steps{
+      display:grid;
+      gap:11px;
+      margin-top:20px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:90px 1fr;
+      gap:14px;
+      padding-top:11px;
+      border-top:1px solid var(--line);
+    }
+
+    .step strong{
+      color:#e6f1ff;
+      font-size:.86rem;
+    }
+
+    .step span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .education-card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:30px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:22px;
+      align-items:center;
+    }
+
+    .education-card h3{font-size:1.3rem;margin-bottom:7px}
+    .education-card p{color:var(--muted)}
+    .edu-badge{
+      border:1px solid rgba(77,163,255,.25);
+      background:rgba(77,163,255,.08);
+      color:#dceeff;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:.88rem;
+      white-space:nowrap;
+    }
+
+    .contact-box{
+      background:linear-gradient(135deg, #122845, #0c192b);
+      border:1px solid rgba(77,163,255,.22);
+      border-radius:26px;
+      padding:42px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h2{
+      font-size:clamp(2rem,4vw,3rem);
+      margin-bottom:10px;
+      line-height:1.1;
+    }
+
+    .contact-box p{
+      color:var(--muted);
+      max-width:680px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0;
+      color:var(--muted);
+      text-align:center;
+      font-size:.9rem;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid,
+      .about-grid,
+      .project-grid,
+      .education-card,
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+
+      .portrait-wrap{
+        justify-content:flex-start;
+        max-width:320px;
+      }
+
+      .skill-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .section-heading{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .contact-box .actions{
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width: 700px){
+      .container{width:min(100% - 28px, var(--max))}
+
+      nav{
+        min-height:auto;
+        padding:16px 0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      nav ul{
+        gap:14px;
+        flex-wrap:wrap;
+      }
+
+      .hero-grid{
+        padding:56px 0 70px;
+        gap:42px;
+      }
+
+      section{padding:72px 0}
+      .skill-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .role-top{flex-direction:column}
+      .date{white-space:normal}
+      .step{grid-template-columns:1fr}
+      .contact-box{padding:30px}
+    }
+
+    @media (max-width: 480px){
+      .stats{grid-template-columns:1fr}
+      h1{font-size:3.1rem}
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
+  <div class="container">
     <nav>
-        <div class="logo">Rishitha Kandi</div>
-
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <div class="logo">Rishitha Kandi</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </div>
 </header>
 
-
-<section class="hero">
-    <div class="hero-content">
-
-        <h1>Rishitha Kandi</h1>
-
-        <h2>Controls Engineer | Industrial Automation | PLC | SCADA | HMI</h2>
-
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Controls & Automation Engineer</div>
+        <h1>Rishitha<br>Kandi</h1>
+        <h2>Building, troubleshooting, and improving reliable industrial automation systems.</h2>
         <p>
-            Controls Engineer with 4+ years of experience in industrial automation,
-            PLC programming, SCADA/HMI development, commissioning, troubleshooting,
-            and production-floor automation support.
+          Controls Engineer with 4+ years of hands-on experience in PLC programming,
+          SCADA/HMI development, commissioning, production-floor troubleshooting,
+          machine vision, industrial networks, drives, and automated manufacturing equipment.
         </p>
 
-        <a href="#projects" class="button">View My Projects</a>
-
-        <a href="#contact" class="button">Contact Me</a>
-
-    </div>
-</section>
-
-
-<section id="about" class="about">
-
-    <h2>About Me</h2>
-
-    <p>
-        I am a Controls Engineer with hands-on experience in industrial automation,
-        PLC programming, SCADA/HMI development, commissioning, and high-volume
-        manufacturing environments.
-        <br><br>
-        My experience includes Allen-Bradley ControlLogix and CompactLogix,
-        Siemens and Omron PLCs, Ignition SCADA, FactoryTalk View, Cognex machine
-        vision, industrial networks, drives, motion systems, conveyors, and
-        automated equipment.
-        <br><br>
-        I enjoy troubleshooting complex automation problems, performing
-        root-cause analysis, modifying controls logic, and improving equipment
-        reliability and production performance.
-    </p>
-
-</section>
-
-
-<section id="skills" class="skills">
-
-    <h2>Technical Skills</h2>
-
-    <div class="skill-grid">
-
-        <div class="skill-card">
-            <h3>PLC & Automation</h3>
-            <p>
-                Allen-Bradley ControlLogix, CompactLogix, Siemens S7,
-                Omron PLCs, FANUC PMC, Ladder Logic, Sequencing,
-                Interlocks, Permissives, Timers & Counters
-            </p>
+        <div class="tech-line">
+          <span class="pill">Allen-Bradley</span>
+          <span class="pill">Siemens</span>
+          <span class="pill">Omron</span>
+          <span class="pill">Ignition SCADA</span>
+          <span class="pill">FANUC</span>
+          <span class="pill">Cognex</span>
         </div>
 
-        <div class="skill-card">
-            <h3>Rockwell Automation</h3>
-            <p>
-                Studio 5000 Logix Designer, FactoryTalk View ME/SE,
-                EtherNet/IP, Distributed I/O, PLC/HMI Troubleshooting
-            </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="Rishitha_Kandi_Controls_Engineer_Resume.pdf" target="_blank">Download Resume</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/rishitha-kandi/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-card">
+          <div class="portrait">
+            <!-- Replace profile.jpg with your actual profile-photo filename -->
+            <img src="profile.jpg" alt="Rishitha Kandi" onerror="this.style.display='none'; this.parentElement.innerHTML='RK';">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">About</div>
+          <h2>Manufacturing controls, from logic to the production floor.</h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            I am a Controls Engineer focused on industrial automation, PLC programming,
+            SCADA/HMI systems, commissioning, and troubleshooting in high-volume manufacturing environments.
+          </p>
+          <p>
+            My experience includes Allen-Bradley ControlLogix and CompactLogix, Siemens and Omron PLCs,
+            Ignition SCADA, FactoryTalk View, Cognex machine vision, FANUC PMC, industrial networks,
+            drives, motion systems, conveyors, sensors, and automated equipment.
+          </p>
+          <p>
+            I enjoy solving production-critical automation problems through live diagnostics,
+            root-cause analysis, safe controls modifications, and validation that improves equipment reliability and uptime.
+          </p>
         </div>
 
-        <div class="skill-card">
-            <h3>Siemens</h3>
-            <p>
-                TIA Portal, SIMATIC Manager / STEP 7, STARTER,
-                HMI Pro CS, PROFINET, PLC & Drive Diagnostics
-            </p>
+        <div class="stats">
+          <div class="stat"><strong>4+ Years</strong><span>Controls & automation experience</span></div>
+          <div class="stat"><strong>PLC + SCADA</strong><span>Programming, HMI, alarms & diagnostics</span></div>
+          <div class="stat"><strong>Manufacturing</strong><span>Production-floor troubleshooting</span></div>
+          <div class="stat"><strong>Commissioning</strong><span>FAT, SAT, I/O checkout & validation</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Technical Skills</div>
+          <h2>Industrial automation toolkit.</h2>
+        </div>
+        <p>Core controls platforms, visualization systems, industrial networks, vision tools, drives, and production equipment.</p>
+      </div>
+
+      <div class="skill-grid">
+        <article class="card">
+          <span class="tag">PLC & Automation</span>
+          <h3>Control Platforms</h3>
+          <p>Allen-Bradley ControlLogix & CompactLogix, Siemens S7, Omron PLCs, FANUC PMC, Ladder Logic, sequencing, interlocks, permissives, timers & counters.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Rockwell</span>
+          <h3>Allen-Bradley</h3>
+          <p>Studio 5000 Logix Designer, FactoryTalk View ME/SE, EtherNet/IP, distributed I/O, PLC/HMI troubleshooting, I/O checkout and controls validation.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Siemens</span>
+          <h3>PLC & Drive Diagnostics</h3>
+          <p>TIA Portal, SIMATIC Manager / STEP 7, STARTER, HMI Pro CS, PROFINET, drive diagnostics, live signal tracing and position feedback.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Omron</span>
+          <h3>PLC, HMI & Safety</h3>
+          <p>Sysmac Studio, CX-Programmer, Network Configurator, OS32C Configuration Tool, DeviceNet, PLC/HMI diagnostics and safety-system support.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">SCADA</span>
+          <h3>Ignition</h3>
+          <p>Ignition Gateway, Designer, Vision Client Launcher, tags, alarms, alarm history, trends, historical data, and PLC-SCADA integration.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Industrial Systems</span>
+          <h3>Vision, Drives & Networks</h3>
+          <p>Cognex In-Sight Explorer, DataMan, Atlas Copco ToolsTalk, servo drives, VFDs, EtherNet/IP, PROFINET, DeviceNet, Modbus TCP/RTU and electrical schematics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Experience</div>
+          <h2>Professional experience.</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="role">
+          <div class="role-box">
+            <div class="role-top">
+              <div>
+                <h3>Controls Engineer</h3>
+                <div class="company">General Motors — Moraine, Ohio</div>
+              </div>
+              <div class="date">Feb 2026 — Present</div>
+            </div>
+            <ul>
+              <li>Troubleshoot Omron and Siemens PLC-controlled automated manufacturing equipment by tracing ladder logic, machine sequences, permissives, interlocks, timers, counters, and live I/O.</li>
+              <li>Diagnose conveyor, motor, actuator, drive, sensor, and positioning faults using PLC commands, feedback signals, safety permissives, drive status, and HMI alarms.</li>
+              <li>Support Cognex machine vision and identification systems, including camera triggers, inspection results, PLC handshakes, DataMan readers, communications, and error-proofing logic.</li>
+              <li>Partner with Production, Maintenance, Quality, and Manufacturing Engineering on root-cause investigations, equipment recovery, controls modifications, and validation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role-box">
+            <div class="role-top">
+              <div>
+                <h3>Controls Engineer</h3>
+                <div class="company">Rockwell Automation — USA</div>
+              </div>
+              <div class="date">Jan 2025 — Feb 2026</div>
+            </div>
+            <ul>
+              <li>Developed, modified, and troubleshot Allen-Bradley ControlLogix and CompactLogix PLC programs in Studio 5000.</li>
+              <li>Configured and troubleshot EtherNet/IP networks, distributed I/O, controllers, and connected field devices.</li>
+              <li>Developed FactoryTalk View ME/SE HMI applications with equipment status, alarms, operator controls, diagnostics, and PLC tag integration.</li>
+              <li>Performed PLC/HMI commissioning, FAT, SAT, I/O checkout, equipment start-up, controls validation, and recurring fault diagnostics.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role-box">
+            <div class="role-top">
+              <div>
+                <h3>Controls & Automation Labs Teaching Assistant</h3>
+                <div class="company">University of Dayton — Dayton, Ohio</div>
+              </div>
+              <div class="date">Sep 2023 — Dec 2024</div>
+            </div>
+            <ul>
+              <li>Supported PLC/HMI labs covering ladder logic, sequencing, alarms, sensors, analog/digital I/O, motor controls, interlocks, and control-panel troubleshooting.</li>
+              <li>Maintained electrical schematics and controls documentation while reinforcing LOTO, NFPA 70E, and OSHA-aligned electrical safety practices.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role-box">
+            <div class="role-top">
+              <div>
+                <h3>Controls Engineer</h3>
+                <div class="company">Wipro — Hyderabad, India</div>
+              </div>
+              <div class="date">Jan 2022 — May 2023</div>
+            </div>
+            <ul>
+              <li>Developed and maintained Ignition SCADA/HMI applications for industrial automation and production monitoring.</li>
+              <li>Built operator screens and configured PLC tags for real-time machine status, process values, sensors, and production faults.</li>
+              <li>Configured alarms, alarm history, trends, historical data, reusable components, and parameterized displays.</li>
+              <li>Integrated Ignition with industrial PLCs and field devices while troubleshooting communication and tag-quality issues.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Featured Projects</div>
+          <h2>Engineering case studies.</h2>
+        </div>
+        <p>Selected work presented without proprietary PLC programs, machine drawings, network details, or internal production data.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-number">Case Study 01</div>
+          <h3>CNC Oil-Hole Drilling Tool Inspection & Quality Improvement</h3>
+          <p>
+            Investigated a machining-quality escape in which a missing or broken drilling tool did not generate the expected Tool Inspection fault.
+          </p>
+
+          <div class="steps">
+            <div class="step"><strong>Problem</strong><span>Improperly machined engine components progressed beyond the intended inspection point.</span></div>
+            <div class="step"><strong>Diagnosis</strong><span>Reproduced the failure using an empty tool holder and confirmed that the machine continued without the expected fault.</span></div>
+            <div class="step"><strong>Root Cause</strong><span>Traced the behavior to CNC program logic where the required Tool Inspection M-code had been commented out / bypassed.</span></div>
+            <div class="step"><strong>Solution</strong><span>Corrected the M-code logic and restored the required inspection behavior.</span></div>
+            <div class="step"><strong>Validation</strong><span>Verified both normal and missing-tool conditions with Production, Quality, and Maintenance.</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">Case Study 02</div>
+          <h3>Ignition SCADA — Production Monitoring & Alarm Management</h3>
+          <p>
+            Developed a centralized SCADA/HMI application for visibility into automated manufacturing equipment and production conditions.
+          </p>
+
+          <div class="steps">
+            <div class="step"><strong>Architecture</strong><span>Built an Ignition-based production monitoring application with PLC-connected tags and equipment visualization.</span></div>
+            <div class="step"><strong>HMI</strong><span>Created operator screens for machine status, process values, sensors, equipment conditions, and faults.</span></div>
+            <div class="step"><strong>Alarms</strong><span>Configured alarms, alarm history, trends, and historical data to support operations and troubleshooting.</span></div>
+            <div class="step"><strong>Integration</strong><span>Established and troubleshot PLC-to-Ignition communication and resolved tag-quality issues.</span></div>
+            <div class="step"><strong>Deployment</strong><span>Tested deployment through Ignition Gateway and Vision Client Launcher for system validation and operator access.</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Education</div>
+          <h2>Academic foundation.</h2>
+        </div>
+      </div>
+
+      <div class="education-card">
+        <div>
+          <h3>Master of Science in Computer Engineering</h3>
+          <p><strong>University of Dayton</strong> — Dayton, Ohio</p>
+          <p style="margin-top:10px;">
+            Relevant coursework: Control Systems, Embedded Systems, Contemporary Digital Systems,
+            Digital IC Design, Analog Integrated Circuit Design, Computer Design,
+            Electronics Systems Lab, and Digital Signal Processing.
+          </p>
+        </div>
+        <div class="edu-badge">M.S. Computer Engineering</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-dark">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <div class="kicker">Contact</div>
+          <h2>Let's connect.</h2>
+          <p>
+            Open to conversations around Controls Engineering, Industrial Automation,
+            PLC, SCADA, HMI, manufacturing controls, commissioning, and production support.
+          </p>
         </div>
 
-        <div class="skill-card">
-            <h3>Omron</h3>
-            <p>
-                Sysmac Studio, CX-Programmer, Network Configurator,
-                OS32C Configuration Tool, DeviceNet
-            </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:rishitha.kandi27@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/rishitha-kandi/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-
-        <div class="skill-card">
-            <h3>Ignition SCADA</h3>
-            <p>
-                Ignition Gateway, Ignition Designer, Vision Client Launcher,
-                Tags, Alarms, Trends, Historical Data, PLC-SCADA Integration
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Vision & Industrial Tools</h3>
-            <p>
-                Cognex In-Sight Explorer, Cognex DataMan,
-                Atlas Copco ToolsTalk, DWG TrueView,
-                Vision Inspection & Error-Proofing
-            </p>
-        </div>
-
+      </div>
     </div>
-
-</section>
-
-
-<section id="experience" class="experience">
-
-    <h2>Professional Experience</h2>
-
-    <div class="job">
-
-        <h3>Controls Engineer — General Motors</h3>
-
-        <div class="date">Moraine, OH | Feb 2026 – Present</div>
-
-        <ul>
-            <li>
-                Troubleshoot Omron and Siemens PLC-controlled automated
-                manufacturing equipment by tracing ladder logic, machine
-                sequences, permissives, interlocks, timers, counters and live I/O.
-            </li>
-
-            <li>
-                Diagnose conveyor, motor, actuator and drive faults using PLC
-                commands, sensor feedback, position signals, safety permissives,
-                drive status and HMI alarms.
-            </li>
-
-            <li>
-                Support Cognex machine vision and identification systems,
-                including camera triggers, inspection results, PLC handshakes,
-                DataMan readers and error-proofing logic.
-            </li>
-
-            <li>
-                Perform production-floor troubleshooting of sensors, photoeyes,
-                proximity switches, actuators, motors, drives and analog/digital I/O.
-            </li>
-        </ul>
-
-    </div>
-
-
-    <div class="job">
-
-        <h3>Controls Engineer — Rockwell Automation</h3>
-
-        <div class="date">USA | Jan 2025 – Feb 2026</div>
-
-        <ul>
-            <li>
-                Developed, modified and troubleshot Allen-Bradley ControlLogix
-                and CompactLogix PLC programs using Studio 5000.
-            </li>
-
-            <li>
-                Configured and troubleshot EtherNet/IP networks and distributed I/O.
-            </li>
-
-            <li>
-                Developed and modified FactoryTalk View ME/SE HMI applications
-                including alarms, diagnostics and operator controls.
-            </li>
-
-            <li>
-                Performed PLC/HMI commissioning, FAT, SAT, I/O checkout,
-                equipment start-up and controls validation.
-            </li>
-        </ul>
-
-    </div>
-
-
-    <div class="job">
-
-        <h3>Controls & Automation Labs Teaching Assistant — University of Dayton</h3>
-
-        <div class="date">Dayton, OH | Sep 2023 – Dec 2024</div>
-
-        <ul>
-            <li>
-                Supported PLC/HMI automation labs covering ladder logic,
-                sequencing, alarms, sensors, motor controls and interlocks.
-            </li>
-
-            <li>
-                Maintained electrical schematics and controls documentation.
-            </li>
-        </ul>
-
-    </div>
-
-
-    <div class="job">
-
-        <h3>Controls Engineer — Wipro</h3>
-
-        <div class="date">Hyderabad, India | Jan 2022 – May 2023</div>
-
-        <ul>
-            <li>
-                Developed and maintained Ignition SCADA/HMI applications
-                for industrial automation and production monitoring.
-            </li>
-
-            <li>
-                Built HMI screens using Ignition Designer and configured PLC tags
-                for real-time equipment status and process values.
-            </li>
-
-            <li>
-                Configured alarms, alarm history, trends and historical data logging.
-            </li>
-
-            <li>
-                Integrated Ignition with industrial PLCs and field devices,
-                troubleshooting communication and tag-quality issues.
-            </li>
-        </ul>
-
-    </div>
-
-</section>
-
-
-<section id="projects" class="projects">
-
-    <h2>Featured Projects</h2>
-
-    <div class="project-grid">
-
-        <div class="project-card">
-
-            <h3>CNC Oil-Hole Drilling Tool Inspection & Quality Improvement</h3>
-
-            <p>
-                Investigated an oil-hole drilling quality issue on CNC machining
-                operations after improperly machined engine components escaped
-                production inspection.
-            </p>
-
-            <p>
-                Reproduced the failure, traced the issue to CNC program logic,
-                identified a bypassed Tool Inspection M-code, corrected the logic,
-                and validated both normal and missing-tool conditions.
-            </p>
-
-            <strong>Focus:</strong>
-            <p>
-                Root Cause Analysis • CNC • Tool Inspection • Quality Improvement
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>Ignition SCADA — Production Monitoring & Alarm Management</h3>
-
-            <p>
-                Developed an Ignition SCADA application for centralized visualization
-                and monitoring of automated manufacturing equipment.
-            </p>
-
-            <p>
-                Built operator HMI screens, configured PLC tags, alarms,
-                alarm history, trends and historical data, and established
-                PLC-to-Ignition communication.
-            </p>
-
-            <strong>Focus:</strong>
-            <p>
-                Ignition SCADA • HMI • PLC Integration • Alarms • Trends
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="education" class="education">
-
-    <h2>Education</h2>
-
-    <div class="education-card">
-
-        <h3>Master of Science in Computer Engineering</h3>
-
-        <p>
-            University of Dayton — Dayton, OH
-        </p>
-
-        <br>
-
-        <p>
-            Relevant Coursework:
-            Control Systems • Embedded Systems • Contemporary Digital Systems •
-            Digital IC Design • Analog Integrated Circuit Design •
-            Computer Design • Electronics Systems Lab •
-            Digital Signal Processing
-        </p>
-
-    </div>
-
-</section>
-
-
-<section id="contact" class="contact">
-
-    <h2>Let's Connect</h2>
-
-    <p>
-        I am open to connecting with professionals and exploring opportunities
-        in Controls Engineering, Industrial Automation, PLC, SCADA and HMI.
-    </p>
-
-    <br>
-
-    <p>
-        Email:
-        <a href="mailto:rishitha.kandi27@gmail.com">
-            rishitha.kandi27@gmail.com
-        </a>
-    </p>
-
-    <p>
-        Location: Dayton, Ohio
-    </p>
-
-    <p>
-        LinkedIn: Add your LinkedIn profile link here
-    </p>
-
-</section>
-
+  </section>
+</main>
 
 <footer>
-    <p>© 2026 Rishitha Kandi | Controls Engineer</p>
+  <div class="container">© 2026 Rishitha Kandi | Controls & Automation Engineer</div>
 </footer>
 
 </body>
